@@ -1,7 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-  content: ['./*.php', './src/**/*.{html,js,php,css}'],
+  content: [
+    './*.php',
+    './app/**/*.{html,js,php,css}',
+    './src/**/*.{html,js,php,css}',
+  ],
   theme: {
     screens: {
       'android-md': '400px',
