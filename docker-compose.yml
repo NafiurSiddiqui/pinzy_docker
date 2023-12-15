@@ -14,7 +14,7 @@ services:
       dockerfile: ./docker/php/dockerfile
     volumes:
       #app dir of hostmachine: app dir of our container
-      - ./app:/app
+      - ./app:/var/www/html
   #mysql
   db:
     image: mysql:8.0
