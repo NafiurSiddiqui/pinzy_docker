@@ -23,7 +23,7 @@ services:
       - mysqldata:/var/lib/mysql
 
     ports:
-      - '3306:3306'
+      - '4306:3306'
 
     restart: unless-stopped
 
