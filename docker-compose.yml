@@ -5,13 +5,13 @@ services:
     ports:
       - '80:80'
     volumes:
-      #mapping docker config: to the system ngnix config
+      #mapping docker config host: to the container ngnix config
       - ./docker/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
 
   #php
   app:
     build:
-      dockerfile: ./docker/php/dockerfile
+      dockerfile: ./docker/php/dockerfile-gpt
     volumes:
       #app dir of hostmachine: app dir of our container
       - ./app:/var/www/html
@@ -23,7 +23,7 @@ services:
       - mysqldata:/var/lib/mysql
 
     ports:
-      - '4306:3306'
+      - '3306:3306'
 
     restart: unless-stopped
 
@@ -35,5 +35,3 @@ services:
 
 volumes:
   mysqldata:
-  #redis
-  #vue?
